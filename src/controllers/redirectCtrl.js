@@ -1,9 +1,9 @@
 /**
  * Load modules
  */
-const RedisHandler = require('../util/redisHandler');
+const RedisHandler = require('../service/RedisHandler');
 
-exports.getUrl = (req, res) => {
+exports.redirectToUrl = (req, res) => {
   // Get whole URL
   const url = `${req.protocol}://${req.headers.host}/${req.params.code}`;
 

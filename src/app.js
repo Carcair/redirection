@@ -14,6 +14,7 @@
  */
 const express = require('express');
 const cors = require('cors');
+const Transfer = require('./modules/Transfer');
 
 /**
  * Loading secret variables
@@ -30,6 +31,18 @@ const app = express();
  */
 app.use(express.json({ limit: '500kb' }));
 app.use(cors());
+
+/**
+ * Start listening
+ */
+// Initialize Transfer class
+const transfer = new Transfer();
+
+// Start watching RabbitMQ server
+transfer.getAllUrls();
+transfer.newUrl();
+transfer.delUrl();
+transfer.sendBaseUrl();
 
 /**
  * Load routes

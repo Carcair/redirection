@@ -7,7 +7,7 @@ const ERLimit = require('express-rate-limit');
 /**
  * Load controller
  */
-const { getUrl } = require('../controllers/redirectCtrl');
+const { redirectToUrl } = require('../controllers/redirectCtrl');
 
 /**
  * Load Router middleware
@@ -21,6 +21,6 @@ const router = express.Router();
  * we are returning 302 response instead of
  * redirecting the route
  */
-router.get('/:code', getUrl);
+router.get('/:code', redirectToUrl);
 
 module.exports = router;
