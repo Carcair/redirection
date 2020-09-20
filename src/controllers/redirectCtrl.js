@@ -17,10 +17,10 @@ exports.redirectToUrl = (req, res) => {
         // Url found
 
         // Keep in case redirecting is necessary
-        // res.redirect(result);
+        res.redirect(result);
 
         // Send back response instead of redirecting
-        res.status(302).end(`Real URL is: ${result}`);
+        // res.status(302).end(`Real URL is: ${result}`);
       }
     })
     .catch((err) => console.log(err));
