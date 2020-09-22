@@ -42,7 +42,6 @@ const transfer = new Transfer();
 transfer.getAllUrls();
 transfer.newUrl();
 transfer.delUrl();
-transfer.sendBaseUrl();
 
 /**
  * Load routes

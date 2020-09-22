@@ -11,7 +11,10 @@ const config = {
   port: 5005,
 
   // Redis port
-  redisPort: 6379,
+  redisUrl: `${process.env.REDIS_URL}` || 'localhost',
+
+  // Rabbit port
+  rabbitUrl: `${process.env.RABBIT_URL}` || 'localhost',
 };
 
 module.exports = config;
