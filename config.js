@@ -4,17 +4,16 @@
  */
 const config = {
   // Environment
-  NODE_ENV: 'development',
-  // env: 'production',
+  env: process.env.NODE_ENV || 'development',
 
   // Port number
-  port: 5005,
+  port: process.env.PORT || '5005',
 
   // Redis port
-  redisUrl: `${process.env.REDIS_URL}` || 'localhost',
+  redisUrl: process.env.REDIS_URL || 'localhost',
 
   // Rabbit port
-  rabbitUrl: `${process.env.RABBIT_URL}` || 'localhost',
+  rabbitUrl: process.env.RABBIT_URL || 'localhost',
 };
 
 module.exports = config;
