@@ -15,6 +15,12 @@
 const express = require('express');
 const cors = require('cors');
 const Transfer = require('./modules/Transfer');
+const swaggerUi = require('swagger-ui-express');
+
+/**
+ * Load swagger documentation
+ */
+const swaggerDoc = require('../swagger.json');
 
 /**
  * Loading secret variables
@@ -51,6 +57,7 @@ const redirect = require('./routes/redirect');
 /**
  * Use routes
  */
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 app.use('/', redirect);
 
 /**
