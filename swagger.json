@@ -25,7 +25,7 @@
           }
         ],
         "responses": {
-          "301": {
+          "302": {
             "description": "Successful redirection."
           },
           "404": {
